@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import { FC, FormEvent, useRef } from "react";
 import classes from "./NewTodo.module.css";
 
-const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+const NewTodo: FC<{ onAddTodo: (text: string) => void }> = (props) => {
   const todoTextInputRef = useRef<HTMLInputElement>(null);
 
-  const submitHandler = (event: React.FormEvent) => {
+  const submitHandler = (event: FormEvent) => {
     event.preventDefault();
 
     const enteredText = todoTextInputRef.current!.value;
